@@ -1,0 +1,43 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "ppe": {
+    "name": "PPE Les Oliviers",
+    "address": "Chemin des Oliviers 8, 1009 Pully",
+    "canton": "VD",
+    "rf_number": "VD-PPE-PUL-2014-0098",
+    "constituted_on": "2014-06-20",
+    "lots_total": 12,
+    "quotes_total_1000": 1000
+  },
+  "lots": [
+    { "lot": 1, "type": "appartement_3.5p", "etage": "rdc", "surface_m2": 78, "quotes": 78, "owner": "M. & Mme Dupraz" },
+    { "lot": 2, "type": "appartement_4.5p", "etage": "rdc", "surface_m2": 102, "quotes": 102, "owner": "Mme Sandra Berger" },
+    { "lot": 3, "type": "appartement_3.5p", "etage": "1er", "surface_m2": 80, "quotes": 80, "owner": "M. Jean-Luc Pittet" },
+    { "lot": 4, "type": "appartement_4.5p", "etage": "1er", "surface_m2": 105, "quotes": 105, "owner": "Famille Rey" },
+    { "lot": 5, "type": "appartement_5.5p", "etage": "2e", "surface_m2": 138, "quotes": 138, "owner": "M. & Mme Salvi" },
+    { "lot": 6, "type": "appartement_4.5p", "etage": "2e", "surface_m2": 104, "quotes": 104, "owner": "Mme Christine Aubert" },
+    { "lot": 7, "type": "attique_5.5p", "etage": "attique", "surface_m2": 152, "quotes": 165, "owner": "M. Roberto Conti" },
+    { "lot": 8, "type": "parking_int", "etage": "ss", "surface_m2": 12, "quotes": 12, "owner": "M. & Mme Dupraz" },
+    { "lot": 9, "type": "parking_int", "etage": "ss", "surface_m2": 12, "quotes": 12, "owner": "Mme Sandra Berger" },
+    { "lot": 10, "type": "parking_int", "etage": "ss", "surface_m2": 12, "quotes": 12, "owner": "M. Jean-Luc Pittet" },
+    { "lot": 11, "type": "cave", "etage": "ss", "surface_m2": 6, "quotes": 6, "owner": "Famille Rey" },
+    { "lot": 12, "type": "buanderie_commune", "etage": "ss", "surface_m2": 186, "quotes": 186, "owner": "commune" }
+  ],
+  "fonds_renovation_chf": 142500.00,
+  "regie": {
+    "name": "Régie Lémanique SA",
+    "ide": "CHE-456.789.012",
+    "honoraires_annuel_chf": 7200.00
+  },
+  "budget_2025_chf": {
+    "charges_chauffage": 28000,
+    "eau_egouts": 4500,
+    "electricite_communs": 1800,
+    "conciergerie": 9600,
+    "assurance_immeuble": 6300,
+    "honoraires_regie": 7200,
+    "entretien_courant": 8000,
+    "alimentation_fonds_renovation": 18000,
+    "total": 83400
+  }
+}

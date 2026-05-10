@@ -1,0 +1,54 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "household": {
+    "country_of_residence": "CH",
+    "canton": "ZH",
+    "commune": "Zürich",
+    "address": "Limmatstrasse 87, 8005 Zürich",
+    "civil_status": "couple_married",
+    "marital_regime": "participation_aux_acquets",
+    "children": [
+      { "first_name": "Lena", "birth_date": "2015-06-04", "in_school": true },
+      { "first_name": "Tim", "birth_date": "2018-11-21", "in_school": true }
+    ]
+  },
+  "taxpayer_a": {
+    "first_name": "Anna",
+    "last_name": "Müller",
+    "birth_date": "1985-04-12",
+    "ahv_number": "756.1234.5678.97",
+    "employer": "Helvetia Cloud SA",
+    "gross_annual_salary_chf": 172500
+  },
+  "taxpayer_b": {
+    "first_name": "Stefan",
+    "last_name": "Müller",
+    "birth_date": "1983-02-17",
+    "ahv_number": "756.4321.8765.13",
+    "employer": "Stadt Zürich",
+    "gross_annual_salary_chf": 98000
+  },
+  "wealth_chf": {
+    "bank_accounts": 84500,
+    "securities_portfolio": 142000,
+    "pillar_3a": 96000,
+    "real_estate_value": 0,
+    "mortgage": 0,
+    "vehicles": 18000,
+    "other_assets": 0,
+    "debts": 5200
+  },
+  "deductions_chf": {
+    "pillar_3a_contributions": 14112,
+    "professional_expenses_a": 4000,
+    "professional_expenses_b": 3000,
+    "childcare_external": 12800,
+    "health_insurance_premiums": 9600,
+    "donations": 1500
+  },
+  "expected_treatment": {
+    "regime": "Imposition ordinaire — déclaration cantonale ZH",
+    "tarif": "Verheiratetentarif (V)",
+    "child_deductions": 2
+  }
+}

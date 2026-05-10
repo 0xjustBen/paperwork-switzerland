@@ -1,0 +1,39 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "qr_type": "SPC",
+  "version": "0200",
+  "coding_type": 1,
+  "creditor": {
+    "iban": "CH4431999123000889012",
+    "type": "S",
+    "name": "Helvetia Cloud SA",
+    "street": "Bahnhofstrasse",
+    "house_number": "42",
+    "postal_code": "8001",
+    "city": "Zürich",
+    "country": "CH"
+  },
+  "ultimate_creditor": null,
+  "amount": {
+    "value": 6800.00,
+    "currency": "CHF"
+  },
+  "debtor": {
+    "type": "S",
+    "name": "PME Lausanne SA",
+    "street": "Avenue de la Gare",
+    "house_number": "12",
+    "postal_code": "1003",
+    "city": "Lausanne",
+    "country": "CH"
+  },
+  "reference": {
+    "type": "QRR",
+    "reference_number": "210000000003139471430009017"
+  },
+  "additional_information": {
+    "unstructured": "Facture 2025-003 — services mars 2025",
+    "trailer": "EPD",
+    "structured_billing_information": "//S1/10/2025-003/11/250304/30/CHE-123.456.789/31/250404/32/8.1"
+  }
+}

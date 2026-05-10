@@ -1,0 +1,46 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "household": {
+    "country_of_residence": "FR",
+    "residence_address": "14 rue Pasteur, 74100 Annemasse, France",
+    "country_of_work": "CH",
+    "canton_of_work": "GE",
+    "civil_status": "couple_married",
+    "dependants": 2,
+    "spouse_employed_in": "FR"
+  },
+  "taxpayer": {
+    "first_name": "Julien",
+    "last_name": "Lefèvre",
+    "birth_date": "1986-09-22",
+    "ahv_number": "756.9988.7766.55",
+    "permit": "G",
+    "permit_expiry": "2028-12-31"
+  },
+  "employer_ch": {
+    "name": "Banque Lémanique SA",
+    "uid": "CHE-567.890.123",
+    "address": "Rue du Rhône 14, 1204 Genève",
+    "since": "2019-03-01"
+  },
+  "income_chf": {
+    "gross_annual_salary": 112000,
+    "thirteenth_month_included": true,
+    "withholding_tax_paid": 11340,
+    "barème_code": "B2",
+    "other_swiss_income": 0,
+    "home_office_days_in_fr": 38
+  },
+  "expected_treatment": {
+    "regime": "Imposition à la source GE — accord franco-suisse 1973",
+    "retrocession_to_french_communes_pct": 4.5,
+    "fr_declaration": "Convention 1966 — crédit d'impôt égal à l'impôt français",
+    "home_office_cap_pct": 40,
+    "home_office_excess_taxable_in_fr": "days > 40% repartis avec quote suisse"
+  },
+  "checks": [
+    "Vérifier statut frontalier (retour quotidien ou hebdomadaire)",
+    "Confirmer barème B2 (marié, double salaire, 2 enfants)",
+    "Émettre attestation-quittance annuelle"
+  ]
+}

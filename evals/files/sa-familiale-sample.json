@@ -1,0 +1,41 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "company": {
+    "legal_name": "Brunner Family Holding SA",
+    "uid": "CHE-678.901.234",
+    "legal_form": "SA",
+    "canton": "ZG",
+    "commune": "Zug",
+    "address": "Baarerstrasse 78, 6300 Zug",
+    "share_capital_chf": 250000,
+    "incorporated": "2008-11-04",
+    "activity": "Holding familiale — participations PME suisses"
+  },
+  "shareholders": [
+    { "name": "Hans Brunner", "role": "président_CA", "shares_pct": 60, "qualified_participation": true },
+    { "name": "Maria Brunner", "role": "CA", "shares_pct": 20, "qualified_participation": true },
+    { "name": "Lukas Brunner", "role": "actionnaire", "shares_pct": 10, "qualified_participation": true },
+    { "name": "Sarah Brunner", "role": "actionnaire", "shares_pct": 10, "qualified_participation": true }
+  ],
+  "financials_chf": {
+    "year": 2024,
+    "turnover": 0,
+    "participations_dividends_received": 480000,
+    "net_profit": 462000,
+    "equity": 4850000,
+    "retained_earnings": 4600000
+  },
+  "dividend_distribution_chf": {
+    "declared": 400000,
+    "anticipated_tax_35_pct": 140000,
+    "net_to_shareholders": 260000,
+    "qualified_participation_relief_pct_federal": 70,
+    "qualified_participation_relief_pct_canton_zg": 50,
+    "ex_date": "2025-04-15"
+  },
+  "expected_treatment": {
+    "regime_federal": "Imposition partielle des dividendes — 70% imposable (participation qualifiée ≥10%)",
+    "regime_cantonal_zg": "50% imposable",
+    "anticipated_tax_recovery": "Récupération via déclaration des actionnaires résidents CH"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "$schema_note": "Copy to reviseur-agree/company.json. The réviseur skill needs audit regime, ASR registration, and audited entity data.",
+  "auditor": {
+    "legal_name": "Alpes Audit SA",
+    "uid": "CHE-901.234.567",
+    "asr_registration_number": "ASR-XXXXXX",
+    "asr_qualification": "expert_reviseur_agree",
+    "_qualification_alternatives": ["reviseur_agree", "expert_reviseur_agree", "entreprise_de_revision_soumise_a_surveillance"],
+    "address": {
+      "street": "Rue du Mont-Blanc 21",
+      "zip": "1201",
+      "city": "Genève",
+      "country": "CH"
+    },
+    "lead_auditor": {
+      "name": "Me Catherine Vionnet",
+      "asr_personal_number": "ASR-YYYYYY",
+      "qualification": "expert_reviseur_agree"
+    },
+    "languages": ["fr", "de", "en"]
+  },
+  "audited_entity": {
+    "legal_name": "Helvetia Cloud SA",
+    "uid": "CHE-123.456.789",
+    "legal_form": "SA",
+    "canton": "ZH",
+    "address": "Bahnhofstrasse 42, 8001 Zürich",
+    "fiscal_year": { "start": "01-01", "end": "12-31" },
+    "audit_regime": "limited",
+    "_regime_alternatives": ["ordinary", "limited", "opting_out"],
+    "thresholds_check": {
+      "balance_sheet_total_chf": 12500000,
+      "turnover_chf": 18200000,
+      "fte_average": 24,
+      "exceeds_2_of_3_threshold_ordinary": false,
+      "comment": "Audit restreint applicable (< 20M / 40M / 250 FTE)"
+    },
+    "accounting_framework": "CO_881_ss",
+    "consolidated_accounts_required": false
+  },
+  "engagement": {
+    "type": "audit_restreint",
+    "_type_alternatives": ["audit_ordinaire", "audit_restreint", "controle_special"],
+    "first_year": false,
+    "appointed_until_ago_n": 2,
+    "max_term_years": 7,
+    "fees_chf_estimated": 14000,
+    "independence_confirmed": true,
+    "non_audit_services": ["aucun"]
+  }
+}
