@@ -44,5 +44,7 @@
   ],
   "integrations": ["bexio", "stripe", "postfinance"],
   "languages": ["en", "fr", "de", "it"],
-  "country": "CH"
+  "country": "CH",
+  "homepage": "https://github.com/0xjustBen/paperwork-switzerland",
+  "tags": ["switzerland", "tax", "fiduciaire", "notaire", "regie", "ai-skills", "quadrilingual"]
 }

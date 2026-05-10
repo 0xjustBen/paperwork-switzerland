@@ -1,5 +1,7 @@
 <sub>🌐 [English](./README.md) · **Français** · [Deutsch](./README.de.md) · [Italiano](./README.it.md)</sub>
 
+![paperwork-switzerland](./assets/banner.svg)
+
 <h1 align="center">Paperwork Switzerland 🇨🇭</h1>
 
 <p align="center">

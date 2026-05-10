@@ -63,3 +63,8 @@ Respect mutuel. Les différences entre cantons sont la norme.
 ## Licence
 
 En soumettant une PR, tu acceptes que ta contribution soit publiée sous MIT.
+
+
+---
+
+_Quadrilingual sync rules: see [CONTRIBUTING.md](./CONTRIBUTING.md) — FR canonical, EN/DE/IT parallel._

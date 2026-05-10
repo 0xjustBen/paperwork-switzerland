@@ -34,3 +34,8 @@ Rispetto reciproco. Le differenze tra cantoni sono la norma.
 ## Licenza
 
 Contributi sotto licenza MIT.
+
+
+---
+
+_Quadrilingual sync rules: see [CONTRIBUTING.md](./CONTRIBUTING.md) — FR canonical, EN/DE/IT parallel._

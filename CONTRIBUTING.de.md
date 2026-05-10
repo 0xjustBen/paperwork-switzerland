@@ -34,3 +34,8 @@ Respektvoll. Kantonale Unterschiede sind die Norm.
 ## Lizenz
 
 Beiträge unter MIT-Lizenz.
+
+
+---
+
+_Quadrilingual sync rules: see [CONTRIBUTING.md](./CONTRIBUTING.md) — FR canonical, EN/DE/IT parallel._

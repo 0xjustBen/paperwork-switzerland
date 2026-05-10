@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="paperwork-switzerland — AI skills for Swiss bureaucracy">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdfdfd"/>
+      <stop offset="100%" stop-color="#eef2f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <g transform="translate(80,110)">
+    <rect width="80" height="80" rx="6" fill="#d52b1e"/>
+    <rect x="33" y="14" width="14" height="52" fill="#ffffff"/>
+    <rect x="14" y="33" width="52" height="14" fill="#ffffff"/>
+  </g>
+  <text x="200" y="155" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#1a1a1a">paperwork-switzerland</text>
+  <text x="200" y="200" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#444">AI skills for Swiss bureaucracy — 26 cantons · FR / EN / DE / IT</text>
+  <text x="200" y="232" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#888">fiduciaire · expert-fiscal · notaire-cantonal · regie · reviseur-agree · controleur-afc</text>
+</svg>
