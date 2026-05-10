@@ -1,0 +1,37 @@
+{
+  "code": "LU",
+  "nom": {
+    "fr": "Lucerne",
+    "de": "Luzern"
+  },
+  "chef_lieu": "Lucerne",
+  "langues": [
+    "de"
+  ],
+  "population": 421000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Lucerne",
+    "url": "https://steuern.lu.ch/"
+  },
+  "notariat": "mixte",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 12.2,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 1.5,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://steuern.lu.ch/",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "skill": "fiduciaire",
+  "rubric": "Grade the response on three axes: accuracy of the legal citation (CO, LTVA, LAVS, BVG), correctness of the rate or threshold quoted, and avoidance of any French (CGI, DGFIP, BOFiP, URSSAF, CSG) or German (UStG, AO) references that do not apply in Switzerland.",
+  "criteria": [
+    { "name": "legal_basis", "weight": 0.4, "description": "Cites the correct Swiss federal law (CO, LTVA, LAVS, BVG, UVG)" },
+    { "name": "numeric_accuracy", "weight": 0.4, "description": "Rate, threshold, or formula quoted matches the in-force value for 2026" },
+    { "name": "no_foreign_law", "weight": 0.2, "description": "No reference to non-Swiss legislation" }
+  ],
+  "pass_threshold": 0.7
+}

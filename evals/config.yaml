@@ -1,0 +1,66 @@
+# Eval runner configuration.
+# Modelled on romainsimon/paperasse — same shape.
+
+workspace: evals-workspace
+model: claude-sonnet-4-6
+grading_model: claude-haiku-4-5-20251001  # fast + cheap for PASS/FAIL grading
+
+global_paths:
+  - evals/
+  - package.json
+  - data/cantons/
+  - data/references/
+  - company.example.json
+
+# Per-skill configuration.
+# baseline_prompt: what a user would type *without* the skill installed.
+# tools: which agent tools are exposed during the skill run.
+# shared_paths: extra paths exposed beyond the skill directory itself.
+skills:
+  fiduciaire:
+    path: fiduciaire
+    baseline_prompt: "Tu es un fiduciaire suisse. Réponds à cette question de comptabilité ou fiscalité suisse."
+    tools: "Read,Bash"
+    shared_paths:
+      - data/cantons/
+      - scripts/
+      - templates/
+      - integrations/
+      - company.example.json
+
+  expert-fiscal:
+    path: expert-fiscal
+    baseline_prompt: "Tu es un expert fiscal suisse diplômé. Réponds à cette question avec les calculs détaillés (IFD + canton + commune)."
+    tools: "Read,Bash"
+    shared_paths:
+      - data/cantons/
+      - scripts/
+
+  controleur-afc:
+    path: controleur-afc
+    baseline_prompt: "Tu es un contrôleur fiscal de l'Administration fédérale des contributions (AFC/ESTV). Analyse ces données et identifie les anomalies."
+    tools: "Read"
+    shared_paths:
+      - data/cantons/
+      - company.example.json
+
+  reviseur-agree:
+    path: reviseur-agree
+    baseline_prompt: "Tu es un réviseur agréé / expert-réviseur ASR. Réponds à cette question de révision selon CO et standards suisses."
+    tools: "Read"
+    shared_paths:
+      - data/cantons/
+
+  notaire-cantonal:
+    path: notaire-cantonal
+    baseline_prompt: "Tu es un notaire suisse. Réponds à cette question en tenant compte du canton concerné (latin / libre / mixte)."
+    tools: "Read"
+    shared_paths:
+      - data/cantons/
+
+  regie:
+    path: regie
+    baseline_prompt: "Tu es un gérant immobilier diplômé (SVIT/USPI). Réponds à cette question selon CO et droit cantonal."
+    tools: "Read"
+    shared_paths:
+      - data/cantons/

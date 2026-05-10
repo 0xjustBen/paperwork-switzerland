@@ -1,0 +1,40 @@
+{
+  "code": "ZH",
+  "nom": {
+    "fr": "Zurich",
+    "de": "Zürich"
+  },
+  "chef_lieu": "Zurich",
+  "langues": [
+    "de"
+  ],
+  "population": 1573000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Zurich",
+    "url": "https://www.zh.ch/de/steuern-finanzen.html"
+  },
+  "notariat": "libre",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 19.7,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 0.0,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [
+    "Notariat libre (notaires privés)",
+    "Pas de droits de mutation cantonaux"
+  ],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www.zh.ch/de/steuern-finanzen.html",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

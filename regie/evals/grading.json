@@ -1,0 +1,11 @@
+{
+  "skill": "regie",
+  "rubric": "Grade property management responses on: correct CO article (253-274g, 269, 269a, 269d, 270, 257b, 257d) or CC article (712a-712t, 647-647e), correct numeric value (30 days, 3 %, 1/2, etc.), cantonal procedural awareness, no French (Code civil français, loi 1989) or German (BGB / WEG) references.",
+  "criteria": [
+    { "name": "legal_basis", "weight": 0.4 },
+    { "name": "numeric_accuracy", "weight": 0.3 },
+    { "name": "procedural_correctness", "weight": 0.2 },
+    { "name": "no_foreign_law", "weight": 0.1 }
+  ],
+  "pass_threshold": 0.7
+}

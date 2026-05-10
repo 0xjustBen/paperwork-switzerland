@@ -1,0 +1,30 @@
+[
+  {
+    "id": "regie-reference-rate",
+    "input": "Le taux hypothécaire de référence est passé de 1.5 à 1.75 %. De combien puis-je augmenter le loyer ?",
+    "expected_themes": ["3 %", "0.25", "OFL", "formule officielle", "art. 269a"],
+    "must_cite": ["CO"],
+    "must_not_cite": []
+  },
+  {
+    "id": "regie-form-mandatory",
+    "input": "J'ai notifié une hausse de loyer par simple courrier. Est-elle valable ?",
+    "expected_themes": ["nulle", "formule officielle", "cantonal", "269d al. 2"],
+    "must_cite": ["CO"],
+    "must_not_cite": []
+  },
+  {
+    "id": "regie-ppe-majority",
+    "input": "Quelle majorité pour décider de travaux utiles dans une PPE ?",
+    "expected_themes": ["1/2", "moitié", "quotes-parts", "art. 647d", "qualifiée"],
+    "must_cite": ["CC"],
+    "must_not_cite": []
+  },
+  {
+    "id": "regie-initial-rent-challenge",
+    "input": "Délai et motifs pour contester le loyer initial ?",
+    "expected_themes": ["30 jours", "art. 270", "pénurie", "abusif", "changement de locataire"],
+    "must_cite": ["CO"],
+    "must_not_cite": []
+  }
+]

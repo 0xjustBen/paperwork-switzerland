@@ -1,0 +1,71 @@
+name: evals-smoke
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate canton JSON
+        run: |
+          for f in data/cantons/*.json; do
+            python3 -c "import json; json.load(open('$f'))"
+          done
+      - name: Each canton has required fields
+        run: |
+          python3 <<'PY'
+          import json, glob, sys
+          required = ["code", "nom", "chef_lieu", "langues", "notariat"]
+          fail = False
+          for f in sorted(glob.glob("data/cantons/*.json")):
+              if f.endswith("_schema.json"): continue
+              d = json.load(open(f))
+              missing = [k for k in required if k not in d]
+              if missing:
+                  print(f"FAIL {f}: missing {missing}"); fail = True
+          sys.exit(1 if fail else 0)
+          PY
+
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: All skills have SKILL.md (EN) + FR/DE/IT siblings with frontmatter
+        run: |
+          for d in fiduciaire expert-fiscal controleur-afc reviseur-agree notaire-cantonal regie; do
+            for f in "$d/SKILL.md" "$d/SKILL.fr.md" "$d/SKILL.de.md" "$d/SKILL.it.md"; do
+              test -f "$f" || { echo "Missing $f"; exit 1; }
+              head -1 "$f" | grep -q '^---$' || { echo "$f missing frontmatter"; exit 1; }
+            done
+            # Each skill must have eval cases
+            test -f "$d/evals/evals.json" || { echo "Missing $d/evals/evals.json"; exit 1; }
+            test -f "$d/evals/grading.json" || { echo "Missing $d/evals/grading.json"; exit 1; }
+          done
+
+  calc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Deterministic calculator tests
+        run: node scripts/test-deterministic-calculations.js
+
+  python-evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install uv
+        run: pip install uv
+      - name: Sync deps
+        run: uv sync --project evals
+      - name: pytest
+        run: uv run --project evals pytest evals/tests -v
+      - name: Plan-only smoke
+        run: uv run --project evals python evals/run_evals.py --plan-only

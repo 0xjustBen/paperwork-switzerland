@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fid-vat-001",
+    "input": "Je suis indépendant à Lausanne, CA 95'000 CHF en 2026. Dois-je m'assujettir à la TVA ?",
+    "expected_themes": ["100'000", "art. 10", "assujettissement volontaire"],
+    "must_cite": ["LTVA"],
+    "must_not_cite": ["CGI", "DGFIP", "BOFiP"]
+  },
+  {
+    "id": "fid-vat-002",
+    "input": "Welcher MwSt-Satz gilt für eine Hotelübernachtung in Zürich in 2026?",
+    "expected_themes": ["Beherbergung", "3.8"],
+    "must_cite": ["MWSTG"],
+    "must_not_cite": ["19 %", "TVA française"]
+  },
+  {
+    "id": "fid-payroll-001",
+    "input": "Pour un salaire annuel de 100'000 CHF, quelles cotisations AVS/AI/APG et AC ?",
+    "expected_themes": ["10.6", "AVS", "2.2", "AC"],
+    "must_cite": ["LAVS"],
+    "must_not_cite": ["URSSAF", "CSG"]
+  },
+  {
+    "id": "fid-closing-001",
+    "input": "Quels sont les critères pour devoir établir un tableau de financement selon le CO ?",
+    "expected_themes": ["961a", "grande entreprise", "20 mio", "40 mio", "250"],
+    "must_cite": ["CO"],
+    "must_not_cite": []
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "code": "FR",
+  "nom": {
+    "fr": "Fribourg",
+    "de": "Freiburg"
+  },
+  "chef_lieu": "Fribourg",
+  "langues": [
+    "fr",
+    "de"
+  ],
+  "population": 332000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Fribourg",
+    "url": "https://www.fr.ch/dfin/scc"
+  },
+  "notariat": "latin",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 13.9,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 3.0,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [
+    "Bilingue FR/DE"
+  ],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www.fr.ch/dfin/scc",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

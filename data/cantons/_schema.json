@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Canton suisse — fiche de référence",
+  "type": "object",
+  "required": ["code", "nom", "chef_lieu", "langues", "notariat"],
+  "properties": {
+    "code": { "type": "string", "pattern": "^[A-Z]{2}$", "description": "Code ISO 3166-2:CH (sans le préfixe CH-)" },
+    "nom": {
+      "type": "object",
+      "description": "Nom officiel dans chaque langue officielle du canton",
+      "additionalProperties": { "type": "string" }
+    },
+    "chef_lieu": { "type": "string" },
+    "langues": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["fr", "de", "it", "rm"] }
+    },
+    "population": { "type": "integer", "description": "Population résidente permanente, dernière année OFS" },
+    "population_annee": { "type": "integer" },
+    "afc_cantonale": {
+      "type": "object",
+      "properties": {
+        "nom": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "notariat": {
+      "type": "string",
+      "enum": ["latin", "libre", "mixte"],
+      "description": "Système notarial"
+    },
+    "fiscalite": {
+      "type": "object",
+      "properties": {
+        "taux_pm_effectif_indicatif": {
+          "type": "number",
+          "description": "Taux effectif IFD + ICC + communal indicatif sur bénéfice net, chef-lieu, % — actualiser annuellement"
+        },
+        "impot_fortune_pp": { "type": "boolean", "description": "Impôt sur la fortune des PP (toujours oui en CH, ici pour homogénéité)" },
+        "droits_mutation_immo_pct": { "type": "number" },
+        "impot_successoral_descendants": { "type": "boolean" }
+      }
+    },
+    "particularites": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "consulte_le"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "consulte_le": { "type": "string", "format": "date" },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

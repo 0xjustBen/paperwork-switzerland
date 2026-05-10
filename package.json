@@ -1,0 +1,22 @@
+{
+  "name": "paperwork-switzerland",
+  "version": "1.0.0",
+  "description": "AI agent skills + tools for Swiss bureaucracy (26 cantons)",
+  "private": true,
+  "scripts": {
+    "calc": "node scripts/calc.js",
+    "test:calc": "node scripts/test-deterministic-calculations.js",
+    "qrbill": "node scripts/generate-qr-bill.js",
+    "fetch": "node integrations/bexio/fetch.js; node integrations/stripe/fetch.js",
+    "fetch:bexio": "node integrations/bexio/fetch.js",
+    "fetch:stripe": "node integrations/stripe/fetch.js",
+    "parse:camt": "node integrations/postfinance/parse.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "swissqrbill": "^4.2.0",
+    "stripe": "^17.0.0"
+  }
+}

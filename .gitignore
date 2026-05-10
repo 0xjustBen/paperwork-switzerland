@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+evals/.venv/
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.local
+*.log
+.idea/
+.vscode/
+
+# eval runner outputs
+evals-workspace/
+evals/cache/
+evals/runs/
+
+# uv
+.uv-cache/
+
+# company-specific (not committed)
+company.json
+*.private.json

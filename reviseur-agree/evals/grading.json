@@ -1,0 +1,11 @@
+{
+  "skill": "reviseur-agree",
+  "rubric": "Grade audit responses on: correct CO article (727 / 727a / 728 / 729 / 725 / 730a), correct numeric threshold (20 mio / 40 mio / 250 / 10 / 7 years), accurate procedural description (audit phases, opting-out, going concern), no French (commissariat aux comptes / redressement judiciaire) or German (HGB / IDW) references that don't apply.",
+  "criteria": [
+    { "name": "legal_basis", "weight": 0.4 },
+    { "name": "numeric_thresholds", "weight": 0.3 },
+    { "name": "procedural_correctness", "weight": 0.2 },
+    { "name": "no_foreign_law", "weight": 0.1 }
+  ],
+  "pass_threshold": 0.7
+}

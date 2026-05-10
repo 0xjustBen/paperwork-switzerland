@@ -1,0 +1,36 @@
+{
+  "code": "UR",
+  "nom": {
+    "fr": "Uri"
+  },
+  "chef_lieu": "Altdorf",
+  "langues": [
+    "de"
+  ],
+  "population": 37000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Uri",
+    "url": "https://www.ur.ch/themen/2496"
+  },
+  "notariat": "mixte",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 12.6,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 0.2,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www.ur.ch/themen/2496",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

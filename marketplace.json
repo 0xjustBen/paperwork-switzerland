@@ -1,0 +1,48 @@
+{
+  "name": "paperwork-switzerland",
+  "description": "AI agent skills specialized in Swiss bureaucracy — 26 cantons, 4 languages",
+  "version": "1.0.0",
+  "author": "0xjustBen",
+  "license": "MIT",
+  "skills": [
+    {
+      "slug": "fiduciaire",
+      "name": "Trustee / Treuhänder",
+      "path": "fiduciaire/SKILL.md",
+      "description": "Swiss SME bookkeeping (CO 957ff), VAT (MWSTG), payroll + AHV/BVG, year-end closing"
+    },
+    {
+      "slug": "expert-fiscal",
+      "name": "Tax Expert",
+      "path": "expert-fiscal/SKILL.md",
+      "description": "Federal (LIFD) + 26 cantonal regimes, individuals & companies, wealth tax, frontalier rules"
+    },
+    {
+      "slug": "controleur-afc",
+      "name": "Tax Auditor (FTA / ESTV)",
+      "path": "controleur-afc/SKILL.md",
+      "description": "Simulated FTA / cantonal audit across 6 axes"
+    },
+    {
+      "slug": "reviseur-agree",
+      "name": "Licensed Auditor",
+      "path": "reviseur-agree/SKILL.md",
+      "description": "Ordinary (CO 727) vs limited (CO 727a) audit, FAOA standards, CO 725 going concern"
+    },
+    {
+      "slug": "notaire-cantonal",
+      "name": "Cantonal Notary",
+      "path": "notaire-cantonal/SKILL.md",
+      "description": "Latin / free / mixed notariat per canton — real estate, succession, company formation"
+    },
+    {
+      "slug": "regie",
+      "name": "Property Manager",
+      "path": "regie/SKILL.md",
+      "description": "Leases (CO 253ff), condominium (CC 712a ff), rent increases, OFL reference rate"
+    }
+  ],
+  "integrations": ["bexio", "stripe", "postfinance"],
+  "languages": ["en", "fr", "de", "it"],
+  "country": "CH"
+}

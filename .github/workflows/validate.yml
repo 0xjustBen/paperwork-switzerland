@@ -1,0 +1,59 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate canton JSON
+        run: |
+          for f in data/cantons/*.json; do
+            python3 -c "import json; json.load(open('$f'))"
+          done
+      - name: Required fields per canton
+        run: |
+          python3 <<'PY'
+          import json, glob, sys
+          required = ["code", "nom", "chef_lieu", "langues", "notariat"]
+          fail = False
+          for f in sorted(glob.glob("data/cantons/*.json")):
+              if f.endswith("_schema.json"): continue
+              d = json.load(open(f))
+              missing = [k for k in required if k not in d]
+              if missing:
+                  print(f"FAIL {f}: missing {missing}"); fail = True
+          sys.exit(1 if fail else 0)
+          PY
+
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: All skills have SKILL.md (EN) + FR/DE/IT variants
+        run: |
+          for d in fiduciaire expert-fiscal controleur-afc reviseur-agree notaire-cantonal regie; do
+            for f in "$d/SKILL.md" "$d/SKILL.fr.md" "$d/SKILL.de.md" "$d/SKILL.it.md"; do
+              test -f "$f" || { echo "Missing $f"; exit 1; }
+              head -1 "$f" | grep -q '^---$' || { echo "$f missing frontmatter"; exit 1; }
+            done
+          done
+
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: pytest -v
+      - run: paperwork cantons --json > /dev/null
+      - run: paperwork eval --responses evals/sample_responses.json

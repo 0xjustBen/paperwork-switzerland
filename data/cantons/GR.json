@@ -1,0 +1,43 @@
+{
+  "code": "GR",
+  "nom": {
+    "fr": "Grisons",
+    "de": "Graubünden",
+    "it": "Grigioni"
+  },
+  "chef_lieu": "Coire",
+  "langues": [
+    "de",
+    "rm",
+    "it"
+  ],
+  "population": 202000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Grisons",
+    "url": "https://www.stv.gr.ch/"
+  },
+  "notariat": "mixte",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 14.8,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 2.0,
+    "impot_successoral_descendants": true
+  },
+  "particularites": [
+    "Trilingue DE/IT/RM",
+    "Premier canton à reconnaître le romanche fiscalement"
+  ],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www.stv.gr.ch/",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

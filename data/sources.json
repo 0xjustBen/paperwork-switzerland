@@ -1,0 +1,25 @@
+{
+  "_note": "Authoritative public sources for Swiss bureaucracy. Cited across skills and data files.",
+  "federal": {
+    "fedlex": "https://www.fedlex.admin.ch",
+    "estv": "https://www.estv.admin.ch",
+    "bazg": "https://www.bazg.admin.ch",
+    "rab": "https://www.rab-asr.ch",
+    "bwo": "https://www.bwo.admin.ch",
+    "ofs": "https://www.bfs.admin.ch",
+    "zefix": "https://www.zefix.ch"
+  },
+  "professional_bodies": {
+    "treuhand_suisse": "https://www.treuhandsuisse.ch",
+    "veb": "https://www.veb.ch",
+    "expert_suisse": "https://www.expertsuisse.ch",
+    "schweizer_notarenverband": "https://www.notaires.ch",
+    "svit": "https://www.svit.ch",
+    "uspi": "https://www.uspi.ch",
+    "asloca": "https://www.asloca.ch"
+  },
+  "intercantonal": {
+    "ssk_csi": "https://www.steuerkonferenz.ch"
+  },
+  "_legal_acts": "See data/references/lois-federales.md for the full table of RS numbers."
+}

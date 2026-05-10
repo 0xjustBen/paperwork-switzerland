@@ -1,0 +1,59 @@
+{
+  "$schema_note": "Copy this to company.json and fill in. Skills read company.json on every run.",
+
+  "legal_name": "Example SA",
+  "trade_name": "Example",
+  "uid": "CHE-123.456.789",
+  "ide_vat": "CHE-123.456.789 TVA",
+  "legal_form": "SA",
+  "canton": "ZH",
+  "commune": "Zürich",
+  "address": {
+    "street": "Bahnhofstrasse 1",
+    "zip": "8001",
+    "city": "Zürich",
+    "country": "CH"
+  },
+
+  "vat": {
+    "subject": true,
+    "method": "effective",
+    "_method_alternatives": ["effective", "ntdr", "flat_rate"],
+    "ntdr_rate": null,
+    "frequency": "quarterly",
+    "_frequency_alternatives": ["quarterly", "semestrial"]
+  },
+
+  "fiscal_year": {
+    "start": "01-01",
+    "end": "12-31"
+  },
+
+  "social": {
+    "ahv_caisse": "AK Banken",
+    "lpp_provider": "Swiss Life",
+    "uvg_provider": "SUVA"
+  },
+
+  "audit": {
+    "regime": "limited",
+    "_regime_alternatives": ["ordinary", "limited", "opting_out"],
+    "auditor_uid": null
+  },
+
+  "bexio": {
+    "enabled": false,
+    "company_id": null
+  },
+
+  "stripe_accounts": [
+    { "id": "main", "name": "Main account", "env_key": "STRIPE_SECRET" }
+  ],
+
+  "postfinance": {
+    "enabled": false,
+    "iban": "CH00 0900 0000 0000 0000 0"
+  },
+
+  "languages": ["de", "en"]
+}

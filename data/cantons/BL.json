@@ -1,0 +1,37 @@
+{
+  "code": "BL",
+  "nom": {
+    "fr": "Bâle-Campagne",
+    "de": "Basel-Landschaft"
+  },
+  "chef_lieu": "Liestal",
+  "langues": [
+    "de"
+  ],
+  "population": 295000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Bâle-Campagne",
+    "url": "https://www.baselland.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/steuerverwaltung"
+  },
+  "notariat": "mixte",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 13.5,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 2.5,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www.baselland.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/steuerverwaltung",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[project]
+name = "paperwork-switzerland-evals"
+version = "0.1.0"
+description = "Eval runner for paperwork-switzerland skills — with/without skill comparison, LLM-as-judge"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"

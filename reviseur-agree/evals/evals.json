@@ -1,0 +1,30 @@
+[
+  {
+    "id": "audit-ordinary-thresholds",
+    "input": "Quels critères déclenchent la révision ordinaire selon le CO ?",
+    "expected_themes": ["20 mio", "40 mio", "250", "deux", "trois"],
+    "must_cite": ["CO 727", "art. 727"],
+    "must_not_cite": []
+  },
+  {
+    "id": "audit-opting-out",
+    "input": "Une Sàrl de 8 EPT veut faire opting-out. Quelles conditions ?",
+    "expected_themes": ["10 EPT", "unanimité", "actionnaires", "renonciation"],
+    "must_cite": ["CO 727a"],
+    "must_not_cite": []
+  },
+  {
+    "id": "audit-co725b",
+    "input": "Une SA est en surendettement apparent. Quelle obligation pour l'administrateur ?",
+    "expected_themes": ["bilan intermédiaire", "valeur d'exploitation", "valeur de liquidation", "avis au juge", "725b"],
+    "must_cite": ["CO 725"],
+    "must_not_cite": ["redressement judiciaire"]
+  },
+  {
+    "id": "audit-rotation",
+    "input": "Quelle durée maximale pour un associé responsable de mandat en révision ordinaire ?",
+    "expected_themes": ["7 ans", "rotation", "730a"],
+    "must_cite": ["CO"],
+    "must_not_cite": []
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "code": "TI",
+  "nom": {
+    "fr": "Tessin",
+    "it": "Ticino"
+  },
+  "chef_lieu": "Bellinzone",
+  "langues": [
+    "it"
+  ],
+  "population": 351000,
+  "population_annee": 2023,
+  "afc_cantonale": {
+    "nom": "Administration fiscale — Tessin",
+    "url": "https://www4.ti.ch/dfe/dc/"
+  },
+  "notariat": "latin",
+  "fiscalite": {
+    "taux_pm_effectif_indicatif": 19.2,
+    "impot_fortune_pp": true,
+    "droits_mutation_immo_pct": 1.5,
+    "impot_successoral_descendants": false
+  },
+  "particularites": [
+    "Italophone — formulaires en IT",
+    "Frontaliers italiens : accord 2023 en vigueur"
+  ],
+  "sources": [
+    {
+      "url": "https://www.estv.admin.ch",
+      "consulte_le": "2026-05-10",
+      "note": "AFC fédérale — point d'entrée"
+    },
+    {
+      "url": "https://www4.ti.ch/dfe/dc/",
+      "consulte_le": "2026-05-10",
+      "note": "Administration cantonale"
+    }
+  ]
+}

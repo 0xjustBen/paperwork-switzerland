@@ -1,0 +1,23 @@
+{
+  "_note": "Swiss VAT rates in force since 2024-01-01. Source: ESTV / AFC.",
+  "in_force_since": "2024-01-01",
+  "rates": {
+    "normal": { "pct": 8.1, "scope": "default rate, most goods and services" },
+    "reduced": { "pct": 2.6, "scope": "food, books, newspapers, medicines (art. 25 al. 2 LTVA)" },
+    "lodging": { "pct": 3.8, "scope": "hotel and lodging services with breakfast (art. 25 al. 4 LTVA)" },
+    "exempt": { "pct": 0.0, "scope": "exports, financial services, healthcare, education (art. 21 LTVA)" }
+  },
+  "threshold_chf": 100000,
+  "threshold_legal_basis": "art. 10 LTVA / MWSTG",
+  "methods": {
+    "effective": { "frequency": "quarterly", "min_chf": null, "max_chf": null },
+    "net_tax_debt_rate": {
+      "frequency": "semestrial",
+      "max_turnover_chf": 5024000,
+      "max_vat_chf": 108000
+    },
+    "flat_rate": { "for": "public corporations only" }
+  },
+  "annual_reconciliation_deadline": "08-31 of N+1",
+  "source": "https://www.estv.admin.ch"
+}
