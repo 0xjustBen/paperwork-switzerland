@@ -1,0 +1,19 @@
+{
+  "_comment": "Example mapping: logical data keys -> AcroForm field names from Lohnausweis form 11 (ESTV). VERIFY field names against your downloaded PDF using `pdftk form.pdf dump_data_fields` — ESTV occasionally renames fields between fiscal years.",
+  "_source": "https://www.estv.admin.ch/estv/fr/accueil/impot-federal-direct/certificat-de-salaire.html",
+  "employer_name": "Arbeitgeber.Name",
+  "employer_address": "Arbeitgeber.Adresse",
+  "employer_uid": "Arbeitgeber.UID",
+  "employee_name": "Arbeitnehmer.Name",
+  "employee_first_name": "Arbeitnehmer.Vorname",
+  "employee_ahv_number": "Arbeitnehmer.AHV_Nummer",
+  "employee_address": "Arbeitnehmer.Adresse",
+  "period_from": "Periode.Von",
+  "period_to": "Periode.Bis",
+  "gross_salary_chf": "Feld1_BruttoLohn",
+  "ahv_iv_eo_contribution": "Feld9_AHV_IV_EO",
+  "bvg_contribution": "Feld9_BVG",
+  "net_salary_chf": "Feld11_NettoLohn",
+  "withholding_tax_chf": "Feld12_Quellensteuer",
+  "expense_allowances_chf": "Feld13_Spesen"
+}
