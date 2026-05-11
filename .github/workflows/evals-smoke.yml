@@ -9,7 +9,7 @@ jobs:
   data:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Validate canton JSON
         run: |
           for f in data/cantons/*.json; do
@@ -33,7 +33,7 @@ jobs:
   skills:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: All skills have SKILL.md (EN) + FR/DE/IT siblings with frontmatter
         run: |
           for d in fiduciaire expert-fiscal controleur-afc reviseur-agree notaire-cantonal regie; do
@@ -49,7 +49,7 @@ jobs:
   calc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with: { node-version: "20" }
       - name: Deterministic calculator tests
@@ -58,7 +58,7 @@ jobs:
   python-evals:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Install uv
