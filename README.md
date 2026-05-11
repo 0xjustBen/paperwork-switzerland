@@ -21,6 +21,10 @@
 
 Inspired by [`romainsimon/paperasse`](https://github.com/romainsimon/paperasse) (France) — same shape, Swiss content: three tax tiers (Confederation / canton / commune), four official languages, 26 cantonal regimes.
 
+![demo](./assets/demo.svg)
+
+<sub>Static SVG placeholder until an asciicast lands.</sub>
+
 ---
 
 ## What is Paperwork Switzerland?
@@ -76,6 +80,64 @@ uv sync --project evals
 | **`regie`** | Property Manager | Leases (CO 253–274g), official rent-increase form, OFL reference mortgage rate, condominium (CC 712a ff), LDTR, eviction summary procedure |
 
 Each skill ships in **4 languages**: `SKILL.md` (English, default), `SKILL.fr.md`, `SKILL.de.md`, `SKILL.it.md`.
+
+---
+
+## Usage with AI agents
+
+Skills are plain Markdown — any agent that can read files can use them. The
+repo is laid out so each top-level skill directory (`fiduciaire/`,
+`expert-fiscal/`, …) can be loaded directly as a system prompt.
+
+### Claude Code
+
+```bash
+cp -r fiduciaire expert-fiscal controleur-afc reviseur-agree notaire-cantonal regie ~/.claude/skills/
+```
+Claude Code auto-discovers `~/.claude/skills/*/SKILL.md` and routes invocations
+by skill description. Set `CLAUDE_PROJECT_DIR` to this repo to keep
+`data/cantons/` and `scripts/calc.js` in scope.
+
+### Codex / OpenAI
+
+Codex CLI reads from `~/.codex/instructions.md`. Append the contents of the
+relevant `SKILL.md` there, or pass it via `--system` to the API. For the API,
+set `OPENAI_API_KEY` and use `gpt-4o-mini` or larger; pin the skill text as the
+first `system` message in each request.
+
+### Cursor
+
+Open the repo in Cursor and add the skill file you need to **Cursor Settings →
+Rules → Project Rules** (it accepts Markdown files directly). Alternatively
+drop `SKILL.md` into `.cursorrules` at the repo root for repo-wide context.
+
+### Mistral via Le Chat / Codestral
+
+In Le Chat, attach the relevant `SKILL.md` as a knowledge file (paid plans
+support persistent instructions). For Codestral or the raw Mistral API, set
+`MISTRAL_API_KEY` and prepend `SKILL.md` as the `system` message — model
+`mistral-small-latest` is enough for most cases; `mistral-large-latest` for
+ambiguous cantonal questions.
+
+### Aider
+
+```bash
+aider --read fiduciaire/SKILL.md --read data/cantons/ZH.json
+```
+Use `--read` for read-only context; Aider keeps the skill loaded across the
+session.
+
+### Cline
+
+In VS Code, add the skill paths under **Cline → Settings → Custom
+Instructions**, or point Cline at the repo and ask it to "read fiduciaire/SKILL.md
+and follow it". Cline persists custom instructions per workspace.
+
+### Windsurf
+
+Drop the skill text into `.windsurfrules` at the repo root (Windsurf reads it
+on every conversation). For multi-skill setups, concatenate the relevant
+`SKILL.md` files.
 
 ---
 
@@ -165,6 +227,29 @@ uv run --project evals python evals/aggregate_benchmark.py                 # sum
 ```
 
 Per-skill cases live in `<skill>/evals/evals.json`; grading prompts in `<skill>/evals/grading.json`.
+
+---
+
+## Eval methodology
+
+Two modes, same harness (`evals/run_evals.py`):
+
+- **Stub mode** (default, offline) — outputs are graded by substring matching
+  against `expected_themes` / `must_cite` / `must_not_cite`. Fast, deterministic,
+  no API key needed. Good for CI on prompt/data PRs. Results land in
+  `evals/runs/`.
+- **Live mode** (`--mode=live --provider={anthropic,openai,mistral}`) — real
+  LLM-as-judge: each case runs twice (with and without the skill loaded as
+  system prompt), then a second call to the same provider scores 0-100 against
+  the rubric. Results land in `evals/results/<provider>-<UTC-timestamp>.json`
+  plus a markdown summary on stdout. See [`evals/README.md`](./evals/README.md)
+  for env vars and cost estimates.
+
+Paperasse (the French sister project this repo is shaped after) reports a
+**+13 %** lift from skill-loading vs baseline on its grading rubric. We
+replicate the methodology — **your numbers may differ depending on the model,
+canton coverage, and locale**. If you run a sweep, please submit a PR with the
+JSON report under `evals/results/`.
 
 ---
 

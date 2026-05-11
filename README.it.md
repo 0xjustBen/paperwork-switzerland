@@ -2,6 +2,8 @@
 
 ![paperwork-switzerland](./assets/banner.svg)
 
+![demo](./assets/demo.svg)
+
 <h1 align="center">Paperwork Switzerland 🇨🇭</h1>
 
 <p align="center">
@@ -112,3 +114,6 @@ Strumenti di assistenza. Non sostituiscono fiduciario, esperto fiscale, revisore
 ## Fonti
 
 - [AFC](https://www.estv.admin.ch) · [Fedlex](https://www.fedlex.admin.ch) · [CSI](https://www.steuerkonferenz.ch) · [ASR](https://www.rab-asr.ch) · [FSN](https://www.notaires.ch) · [UFAB — tasso di riferimento](https://www.bwo.admin.ch)
+
+
+<!-- TODO: translate "Usage with AI agents" + "Eval methodology" sections from README.md -->

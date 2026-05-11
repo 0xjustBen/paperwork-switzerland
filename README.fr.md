@@ -2,6 +2,8 @@
 
 ![paperwork-switzerland](./assets/banner.svg)
 
+![demo](./assets/demo.svg)
+
 <h1 align="center">Paperwork Switzerland 🇨🇭</h1>
 
 <p align="center">
@@ -115,3 +117,6 @@ Outils d'assistance. Ne remplacent pas fiduciaire, expert fiscal, réviseur ASR,
 ## Sources
 
 - [AFC / ESTV](https://www.estv.admin.ch) · [Fedlex](https://www.fedlex.admin.ch) · [CSI](https://www.steuerkonferenz.ch) · [ASR / RAB](https://www.rab-asr.ch) · [FSN](https://www.notaires.ch) · [OFL — taux de référence](https://www.bwo.admin.ch)
+
+
+<!-- TODO: translate "Usage with AI agents" + "Eval methodology" sections from README.md -->

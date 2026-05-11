@@ -2,6 +2,8 @@
 
 ![paperwork-switzerland](./assets/banner.svg)
 
+![demo](./assets/demo.svg)
+
 <h1 align="center">Paperwork Switzerland 🇨🇭</h1>
 
 <p align="center">
@@ -112,3 +114,6 @@ Hilfsmittel. Ersetzen keinen diplomierten Treuhänder, Steuerexperten, RAB-Revis
 ## Quellen
 
 - [ESTV](https://www.estv.admin.ch) · [Fedlex](https://www.fedlex.admin.ch) · [SSK](https://www.steuerkonferenz.ch) · [RAB](https://www.rab-asr.ch) · [Notarenverband](https://www.notaires.ch) · [BWO](https://www.bwo.admin.ch)
+
+
+<!-- TODO: translate "Usage with AI agents" + "Eval methodology" sections from README.md -->
