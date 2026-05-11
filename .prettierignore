@@ -1,0 +1,8 @@
+node_modules
+.venv
+evals/.venv
+evals/__pycache__
+.pytest_cache
+*.lock
+*.example.json
+evals/files/camt*.xml
