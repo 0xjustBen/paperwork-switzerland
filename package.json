@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "swissqrbill": "^4.2.0",
-    "stripe": "^17.0.0"
+    "stripe": "^22.1.1"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
