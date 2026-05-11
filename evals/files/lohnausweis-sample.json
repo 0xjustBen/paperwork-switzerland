@@ -1,0 +1,48 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "form": "Lohnausweis / Certificat de salaire",
+  "year": 2024,
+  "employer": {
+    "name": "Helvetia Cloud SA",
+    "uid": "CHE-123.456.789",
+    "address": "Bahnhofstrasse 42, 8001 Zürich",
+    "contact": "rh@helvcloud.ch"
+  },
+  "employee": {
+    "ahv_number": "756.1234.5678.97",
+    "first_name": "Anna",
+    "last_name": "Müller",
+    "birth_date": "1985-04-12",
+    "address": "Limmatstrasse 87, 8005 Zürich",
+    "civil_status": "married",
+    "employment_period": { "from": "2024-01-01", "to": "2024-12-31" },
+    "function": "CEO"
+  },
+  "salary_chf": {
+    "section_1_gross_salary": 156000.00,
+    "section_2_1_supplementary_benefits": 0.00,
+    "section_2_2_irregular_benefits": 12000.00,
+    "section_2_3_capital_payments": 0.00,
+    "section_3_employee_shares_value": 4500.00,
+    "section_4_bod_fees": 0.00,
+    "section_5_other_benefits": 0.00,
+    "section_7_other": 0.00,
+    "section_8_total_gross": 172500.00,
+    "section_9_ahv_iv_eo_alv_nbu_contributions": 11432.25,
+    "section_10_lpp_ordinary": 9800.00,
+    "section_10_2_lpp_buy_in": 5000.00,
+    "section_11_net_salary": 146267.75,
+    "section_12_withholding_tax_deducted": 0.00,
+    "section_13_1_actual_business_expenses": 0.00,
+    "section_13_2_lump_sum_expenses": 0.00,
+    "section_14_other_remuneration_in_kind": 0.00,
+    "section_15_remarks": "Lunch checks CHF 1'440 (12 × 120). Home office (telework) 60% — 2024."
+  },
+  "fringe_benefits": {
+    "company_car_F": false,
+    "free_meals_G": false,
+    "private_transport_share_F": false
+  },
+  "signed_on": "2025-01-30",
+  "signed_by": "Marco Rossi, Administrateur"
+}

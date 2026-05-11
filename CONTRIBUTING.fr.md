@@ -60,6 +60,34 @@ Merci de vouloir aider. Ce projet vit grâce aux praticiens — fiduciaires, fis
 
 Respect mutuel. Les différences entre cantons sont la norme.
 
+## Synchronisation quadrilingue
+
+Le FR est canonique. EN/DE/IT doivent rester parallèles — quand l'un bouge,
+les trois autres suivent dans la même PR.
+
+Fichiers à synchroniser :
+
+- `README.md` (EN) ↔ `README.fr.md` ↔ `README.de.md` ↔ `README.it.md`
+- `CONTRIBUTING.md` (EN) ↔ `CONTRIBUTING.fr.md` ↔ `CONTRIBUTING.de.md` ↔ `CONTRIBUTING.it.md`
+- Pour chaque skill : `<skill>/SKILL.md` ↔ `SKILL.fr.md` ↔ `SKILL.de.md` ↔ `SKILL.it.md`
+
+Convention de nommage :
+
+- `*.md` — anglais (défaut)
+- `*.fr.md` — français (autorité canonique sur le contenu)
+- `*.de.md` — allemand
+- `*.it.md` — italien
+
+Les changements monolingues (données, scripts, JSON d'eval) n'ont pas besoin
+d'être traduits, mais les relecteurs vérifient que les prompts, instructions
+et chaînes visibles par l'utilisateur restent alignés sur les quatre
+fichiers.
+
 ## Licence
 
 En soumettant une PR, tu acceptes que ta contribution soit publiée sous MIT.
+
+
+---
+
+_Cette version est une traduction de la version canonique [CONTRIBUTING.md](./CONTRIBUTING.md)._

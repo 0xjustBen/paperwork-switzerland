@@ -1,0 +1,114 @@
+{
+  "_disclaimer": "Illustrative — verify against canton's published barème (lois fiscales cantonales) before production use",
+  "_source": "https://www.sg.ch/steuern-finanzen/steuern.html",
+  "_canton": "SG",
+  "_year": 2026,
+  "currency": "CHF",
+  "tax_base": "revenu imposable (after federal/cantonal deductions)",
+  "scope": "Impôt cantonal de base (ICC). Communal coefficient applies on top (multiple cantonal de base).",
+  "marital_status": {
+    "single": [
+      {
+        "from": 0,
+        "rate_pct": 0.0,
+        "to": 13500
+      },
+      {
+        "from": 13500,
+        "rate_pct": 1.91,
+        "to": 19600
+      },
+      {
+        "from": 19600,
+        "rate_pct": 3.44,
+        "to": 27100
+      },
+      {
+        "from": 27100,
+        "rate_pct": 4.85,
+        "to": 36500
+      },
+      {
+        "from": 36500,
+        "rate_pct": 6.2,
+        "to": 47900
+      },
+      {
+        "from": 47900,
+        "rate_pct": 7.5,
+        "to": 63300
+      },
+      {
+        "from": 63300,
+        "rate_pct": 8.75,
+        "to": 86400
+      },
+      {
+        "from": 86400,
+        "rate_pct": 9.97,
+        "to": 127100
+      },
+      {
+        "from": 127100,
+        "rate_pct": 11.17,
+        "to": 200000
+      },
+      {
+        "from": 200000,
+        "rate_pct": 12.35
+      }
+    ],
+    "married": [
+      {
+        "from": 0,
+        "rate_pct": 0.0,
+        "to": 18900
+      },
+      {
+        "from": 18900,
+        "rate_pct": 1.76,
+        "to": 27440
+      },
+      {
+        "from": 27440,
+        "rate_pct": 3.17,
+        "to": 37940
+      },
+      {
+        "from": 37940,
+        "rate_pct": 4.48,
+        "to": 51100
+      },
+      {
+        "from": 51100,
+        "rate_pct": 5.72,
+        "to": 67060
+      },
+      {
+        "from": 67060,
+        "rate_pct": 6.92,
+        "to": 88620
+      },
+      {
+        "from": 88620,
+        "rate_pct": 8.07,
+        "to": 120959
+      },
+      {
+        "from": 120959,
+        "rate_pct": 9.21,
+        "to": 177940
+      },
+      {
+        "from": 177940,
+        "rate_pct": 10.32,
+        "to": 280000
+      },
+      {
+        "from": 280000,
+        "rate_pct": 11.4
+      }
+    ]
+  },
+  "notes": "Barème de base avant multiplicateur communal et taux d'imposition communal. Canton: St. Gallen."
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample data — illustrative only -->
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.054.001.08">
+  <BkToCstmrDbtCdtNtfctn>
+    <GrpHdr>
+      <MsgId>NOTIF-2025-03-20-0001</MsgId>
+      <CreDtTm>2025-03-20T18:30:00</CreDtTm>
+    </GrpHdr>
+    <Ntfctn>
+      <Id>NTF-20250320-0001</Id>
+      <CreDtTm>2025-03-20T18:30:00</CreDtTm>
+      <Acct>
+        <Id><IBAN>CH9300762011623852957</IBAN></Id>
+        <Ccy>CHF</Ccy>
+        <Ownr><Nm>Helvetia Cloud SA</Nm></Ownr>
+        <Svcr><FinInstnId><BICFI>ZKBKCHZZ80A</BICFI></FinInstnId></Svcr>
+      </Acct>
+      <Ntry>
+        <Amt Ccy="CHF">18750.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2025-03-20</Dt></BookgDt>
+        <ValDt><Dt>2025-03-20</Dt></ValDt>
+        <BkTxCd>
+          <Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>ESCT</SubFmlyCd></Fmly></Domn>
+        </BkTxCd>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><AcctSvcrRef>20250320XX0001</AcctSvcrRef></Refs>
+            <Amt Ccy="CHF">18750.00</Amt>
+            <CdtDbtInd>CRDT</CdtDbtInd>
+            <RltdPties>
+              <Dbtr><Nm>Banque Y SA</Nm><PstlAdr><AdrLine>Place Bel-Air 2, 1204 Genève</AdrLine></PstlAdr></Dbtr>
+              <DbtrAcct><Id><IBAN>CH5604835012345678000</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf>
+              <Strd><CdtrRefInf><Tp><CdOrPrtry><Cd>SCOR</Cd></CdOrPrtry></Tp><Ref>RF712025002</Ref></CdtrRefInf></Strd>
+            </RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Ntfctn>
+  </BkToCstmrDbtCdtNtfctn>
+</Document>

@@ -7,6 +7,8 @@
  *   STRIPE_SECRET            for single accounts
  *   STRIPE_PLATFORM_SECRET   for Stripe Connect platforms
  *
+ * See integrations/.env.template for the full list of integration env vars.
+ *
  * Usage:
  *   node integrations/stripe/fetch.js                                    # all accounts
  *   node integrations/stripe/fetch.js --account main

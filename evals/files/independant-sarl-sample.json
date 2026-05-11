@@ -1,0 +1,51 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "company": {
+    "legal_name": "Atelier Pixel Sàrl",
+    "uid": "CHE-789.012.345",
+    "legal_form": "Sàrl",
+    "canton": "VD",
+    "commune": "Lausanne",
+    "address": "Rue de Bourg 31, 1003 Lausanne",
+    "share_capital_chf": 20000,
+    "incorporated": "2021-09-15",
+    "activity": "Studio de design web — freelance via Sàrl"
+  },
+  "associe_gerant": {
+    "first_name": "Camille",
+    "last_name": "Rochat",
+    "birth_date": "1989-05-30",
+    "ahv_number": "756.5544.3322.11",
+    "permit": "CH",
+    "shares_pct": 100,
+    "function": "Gérante unique",
+    "signature": "individuelle"
+  },
+  "salary_arrangement_chf": {
+    "gross_annual_salary": 84000,
+    "thirteenth_month": false,
+    "ahv_class": "salarié",
+    "lpp_provider": "AXA Foundation",
+    "lpp_annual": 6720
+  },
+  "company_financials_chf": {
+    "year": 2024,
+    "turnover": 168000,
+    "salary_charges": 84000,
+    "social_charges": 12320,
+    "rent_office": 9600,
+    "other_opex": 14800,
+    "net_profit": 47280,
+    "equity": 67280
+  },
+  "expected_treatment": {
+    "issue": "Démarcation salaire vs dividende — risque de requalification AVS si salaire trop bas",
+    "rule_of_thumb": "Salaire ≥ marché (60-80k pour designer Lausanne)",
+    "dividend_potential": "Distribution possible — participation qualifiée 100%, allègement 70% fédéral"
+  },
+  "checks": [
+    "Vérifier ratio salaire/dividende",
+    "Confirmer assujettissement TVA (CA > 100k → oui)",
+    "TVA méthode TDFN éligible (CA < 5.0 mio, impôt < 103k)"
+  ]
+}

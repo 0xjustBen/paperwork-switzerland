@@ -1,5 +1,9 @@
 <sub>🌐 [English](./README.md) · **Français** · [Deutsch](./README.de.md) · [Italiano](./README.it.md)</sub>
 
+![paperwork-switzerland](./assets/banner.svg)
+
+![demo](./assets/demo.svg)
+
 <h1 align="center">Paperwork Switzerland 🇨🇭</h1>
 
 <p align="center">
@@ -60,6 +64,67 @@ uv sync --project evals
 
 ---
 
+## Utilisation avec les agents IA
+
+Les skills sont du Markdown brut — tout agent capable de lire des fichiers
+peut les utiliser. Le repo est organisé pour que chaque dossier de skill
+(`fiduciaire/`, `expert-fiscal/`, …) puisse être chargé directement comme
+prompt système.
+
+### Claude Code
+
+```bash
+cp -r fiduciaire expert-fiscal controleur-afc reviseur-agree notaire-cantonal regie ~/.claude/skills/
+```
+Claude Code détecte automatiquement `~/.claude/skills/*/SKILL.md` et route les
+invocations selon la description du skill. Définis `CLAUDE_PROJECT_DIR` sur ce
+repo pour garder `data/cantons/` et `scripts/calc.js` dans le périmètre.
+
+### Codex / OpenAI
+
+Codex CLI lit depuis `~/.codex/instructions.md`. Ajoutes-y le contenu du
+`SKILL.md` pertinent, ou passe-le via `--system` à l'API. Pour l'API, définis
+`OPENAI_API_KEY` et utilise `gpt-4o-mini` ou plus grand ; épingle le texte du
+skill comme premier message `system` de chaque requête.
+
+### Cursor
+
+Ouvre le repo dans Cursor et ajoute le fichier de skill voulu dans **Cursor
+Settings → Rules → Project Rules** (accepte directement les fichiers
+Markdown). Tu peux aussi déposer `SKILL.md` dans `.cursorrules` à la racine du
+repo pour un contexte global.
+
+### Mistral via Le Chat / Codestral
+
+Dans Le Chat, attache le `SKILL.md` pertinent comme fichier de connaissance
+(les offres payantes supportent des instructions persistantes). Pour Codestral
+ou l'API Mistral brute, définis `MISTRAL_API_KEY` et préfixe `SKILL.md` comme
+message `system` — `mistral-small-latest` suffit dans la plupart des cas ;
+`mistral-large-latest` pour les questions cantonales ambiguës.
+
+### Aider
+
+```bash
+aider --read fiduciaire/SKILL.md --read data/cantons/ZH.json
+```
+Utilise `--read` pour un contexte en lecture seule ; Aider garde le skill
+chargé pendant toute la session.
+
+### Cline
+
+Dans VS Code, ajoute les chemins de skill sous **Cline → Settings → Custom
+Instructions**, ou pointe Cline sur le repo et demande-lui de « lire
+fiduciaire/SKILL.md et le suivre ». Cline conserve les instructions
+personnalisées par workspace.
+
+### Windsurf
+
+Dépose le texte du skill dans `.windsurfrules` à la racine du repo (Windsurf
+le lit à chaque conversation). Pour des configurations multi-skills,
+concatène les `SKILL.md` pertinents.
+
+---
+
 ## Exemples
 
 ```
@@ -75,28 +140,63 @@ uv sync --project evals
 
 ## Données cantonales
 
-[`data/cantons/`](./data/cantons) — un JSON par canton, schéma dans [`_schema.json`](./data/cantons/_schema.json).
+[`data/cantons/`](./data/cantons) — un JSON par canton (code ISO 3166-2), schéma dans [`_schema.json`](./data/cantons/_schema.json). Utilisé par tous les skills et par les calculateurs déterministes.
+
+Champs : nom officiel (multilingue), capitale, langues, URL de l'administration fiscale cantonale, système notarial, taux effectifs indicatifs, droits de mutation, spécificités cantonales.
+
+---
 
 ## Calculateurs déterministes
 
+Les LLM sont mauvais en arithmétique. Les skills délèguent chaque calcul à `scripts/calc.js` :
+
 ```bash
-node scripts/calc.js vat --net 1000 --rate normal
-node scripts/calc.js ifd --profit 500000
-node scripts/calc.js pm --canton ZG --profit 500000
+# TVA (en vigueur depuis 2024)
+node scripts/calc.js vat --net 1000 --rate normal       # → 81.00
+node scripts/calc.js vat-extract --gross 1081 --rate normal
+
+# Impôt fédéral direct (IFD)
+node scripts/calc.js ifd --profit 500000                 # → 39 170.51 CHF
+
+# Estimation impôt PM combiné
+node scripts/calc.js pm --canton ZG --profit 500000      # → 59 250.00 CHF (11.85 %)
 node scripts/calc.js compare --cantons ZH,ZG,GE,VD,TI --profit 500000
+
+# Seuil art. 10 LTVA
+node scripts/calc.js vat-threshold --turnover 95000      # → non assujetti
+
+# Droits de mutation immobilière
+node scripts/calc.js mutation --canton GE --price 1200000
+
+# Prorata, AVS, déduction de coordination LPP…
+node scripts/calc.js --help
 ```
+
+Sortie JSON, prête à être réinjectée dans les skills.
+
+---
 
 ## Intégrations
 
 | Connecteur | Description | Env requise |
 |-----------|-------------|-------------|
-| [bexio](integrations/bexio) | Compta PME suisse | `BEXIO_API_TOKEN` |
-| [Stripe](integrations/stripe) | Paiements | `STRIPE_SECRET` |
-| [PostFinance](integrations/postfinance) | Parser ISO 20022 camt.053 (offline) | aucune |
+| [bexio](integrations/bexio) | Compta PME suisse, transactions, contacts | `BEXIO_API_TOKEN` |
+| [Stripe](integrations/stripe) | Charges, payouts, frais (CHF / EUR / USD) | `STRIPE_SECRET` |
+| [PostFinance](integrations/postfinance) | Parser ISO 20022 camt.053 (fonctionne hors-ligne) | aucune |
+
+```bash
+npm run fetch:bexio
+npm run fetch:stripe -- --start 2026-01-01
+node integrations/postfinance/parse.js statement.xml > transactions.json
+```
+
+Voir [`integrations/README.md`](./integrations/README.md) et [`.env.example`](./.env.example).
+
+---
 
 ## Évaluations
 
-Cadre LLM-as-judge, modelé sur `romainsimon/paperasse`. Cas par skill dans `<skill>/evals/evals.json`, rubrique dans `<skill>/evals/grading.json`.
+Cadre LLM-as-judge, modelé sur `romainsimon/paperasse`. Les skills sont exécutés avec et sans leur SKILL.md, puis notés sur l'exactitude, la citation des bases légales correctes (CO / LIFD / LTVA / CC) et l'absence de références franco-spécifiques (CGI, DGFIP, BOFiP).
 
 ```bash
 uv run --project evals python evals/run_evals.py
@@ -106,10 +206,78 @@ uv run --project evals python evals/aggregate_benchmark.py
 
 ---
 
+## Méthodologie d'évaluation
+
+Deux modes, même harnais (`evals/run_evals.py`) :
+
+- **Mode stub** (par défaut, hors-ligne) — les sorties sont notées par
+  correspondance de sous-chaîne sur `expected_themes` / `must_cite` /
+  `must_not_cite`. Rapide, déterministe, aucune clé API requise. Idéal pour
+  la CI sur les PR de prompts/données. Résultats dans `evals/runs/`.
+- **Mode live** (`--mode=live --provider={anthropic,openai,mistral}`) — vrai
+  LLM-as-judge : chaque cas est exécuté deux fois (avec et sans le skill
+  chargé en prompt système), puis un second appel au même fournisseur note
+  de 0 à 100 selon la rubrique. Résultats dans
+  `evals/results/<provider>-<UTC-timestamp>.json` plus un résumé Markdown
+  sur stdout. Voir [`evals/README.md`](./evals/README.md) pour les variables
+  d'env et les estimations de coût.
+
+Paperasse (le projet français dont ce repo s'inspire) rapporte un gain de
+**+13 %** au chargement du skill vs baseline sur sa rubrique. Nous reprenons
+la méthodologie — **tes chiffres peuvent varier selon le modèle, la
+couverture cantonale et la locale**. Si tu lances un sweep, merci de
+soumettre une PR avec le rapport JSON sous `evals/results/`.
+
+---
+
+## Structure du projet
+
+```
+.
+├── fiduciaire/             # 6 skills, chacun :
+│   ├── SKILL.md            #   anglais (défaut — auto-chargé par les outils)
+│   ├── SKILL.fr.md         #   français
+│   ├── SKILL.de.md         #   allemand
+│   ├── SKILL.it.md         #   italien
+│   ├── references/         #   sous-références détaillées (md)
+│   ├── data/               #   tables JSON, taux, barèmes
+│   ├── templates/          #   modèles de documents
+│   ├── scripts/            #   helpers spécifiques au skill
+│   └── evals/              #   cas + grilles d'évaluation
+├── expert-fiscal/  controleur-afc/  reviseur-agree/  notaire-cantonal/  regie/
+├── data/
+│   └── cantons/            # 26 fichiers JSON cantonaux (source unique)
+├── evals/                  # runner d'évaluation cross-skills (uv)
+├── integrations/           # connecteurs bexio / Stripe / PostFinance (Node.js)
+├── scripts/                # calc.js, générateur QR-facture, helpers
+├── templates/              # modèles cross-skills
+├── company.example.json    # contexte injecté dans les skills
+├── marketplace.json        # métadonnées registre des skills
+├── package.json            # deps Node
+└── .env.example
+```
+
+---
+
+## Contribuer
+
+Voir [`CONTRIBUTING.md`](./CONTRIBUTING.md). Priorités : affiner les données fiscales cantonales, traduire le contenu des skills, ajouter des cas d'évaluation, construire des templates (facture conforme TVA, bail VD/GE, formule officielle de hausse de loyer).
+
+Toutes les contributions sous licence MIT.
+
+---
+
 ## ⚠️ Avertissement
 
-Outils d'assistance. Ne remplacent pas fiduciaire, expert fiscal, réviseur ASR, notaire ou avocat agréés. Vérifier contre sources officielles (ESTV/AFC, BAZG, cantons).
+Ces skills sont des **outils d'assistance**. Ils ne remplacent ni un fiduciaire qualifié, ni un expert fiscal certifié, ni un réviseur ASR, ni un notaire, ni un avocat. Les taux évoluent chaque année — à vérifier contre les sources officielles (ESTV/AFC, BAZG, autorités cantonales) avant toute décision contraignante.
 
-## Sources
+---
 
-- [AFC / ESTV](https://www.estv.admin.ch) · [Fedlex](https://www.fedlex.admin.ch) · [CSI](https://www.steuerkonferenz.ch) · [ASR / RAB](https://www.rab-asr.ch) · [FSN](https://www.notaires.ch) · [OFL — taux de référence](https://www.bwo.admin.ch)
+## Sources officielles
+
+- [Administration fédérale des contributions (AFC / ESTV)](https://www.estv.admin.ch)
+- [Fedlex — Recueil systématique du droit fédéral](https://www.fedlex.admin.ch)
+- [Conférence suisse des impôts (CSI / SSK)](https://www.steuerkonferenz.ch)
+- [Autorité fédérale de surveillance en matière de révision (ASR / RAB)](https://www.rab-asr.ch)
+- [Fédération suisse des notaires](https://www.notaires.ch)
+- [Office fédéral du logement — taux de référence](https://www.bwo.admin.ch)

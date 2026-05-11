@@ -60,6 +60,25 @@ Thanks for helping. This project lives through practitioners — Treuhänder, ta
 
 Be respectful. Differences between cantons are the norm, not a flaw.
 
+## Quadrilingual sync
+
+FR is canonical. EN/DE/IT must stay parallel — when one moves, the other three follow in the same PR.
+
+Files requiring sync:
+
+- `README.md` (EN) ↔ `README.fr.md` ↔ `README.de.md` ↔ `README.it.md`
+- `CONTRIBUTING.md` (EN) ↔ `CONTRIBUTING.fr.md` ↔ `CONTRIBUTING.de.md` ↔ `CONTRIBUTING.it.md`
+- For every skill: `<skill>/SKILL.md` ↔ `SKILL.fr.md` ↔ `SKILL.de.md` ↔ `SKILL.it.md`
+
+Naming convention:
+
+- `*.md` — English (default)
+- `*.fr.md` — French (canonical content authority)
+- `*.de.md` — German
+- `*.it.md` — Italian
+
+Monolingual changes (data, scripts, eval JSON) do not need translation, but reviewers will check that prompts, instructions, and user-facing strings stay in lockstep across the four files.
+
 ## License
 
 By submitting a PR, you agree your contribution is published under MIT.

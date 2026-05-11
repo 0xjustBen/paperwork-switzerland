@@ -1,0 +1,55 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "taxpayer": {
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "birth_date": "1991-12-04",
+    "nationality": "IN",
+    "ahv_number": "756.6677.8899.00",
+    "permit": "B",
+    "permit_first_issued": "2023-08-01",
+    "civil_status": "single",
+    "dependants": 0
+  },
+  "residence": {
+    "canton": "ZG",
+    "commune": "Zug",
+    "address": "Alpenstrasse 11, 6300 Zug",
+    "arrived_in_ch": "2023-08-01"
+  },
+  "employer": {
+    "name": "Crypto Valley Labs AG",
+    "uid": "CHE-890.123.456",
+    "address": "Dammstrasse 19, 6300 Zug"
+  },
+  "income_chf": {
+    "gross_annual_salary": 145000,
+    "thirteenth_month_included": true,
+    "bonus": 18000,
+    "withholding_tax_paid": 18675,
+    "barème_code": "A0",
+    "rsu_vested_value": 0
+  },
+  "wealth_chf": {
+    "bank_accounts": 22000,
+    "securities_portfolio": 8500,
+    "real_estate_value": 0
+  },
+  "expected_treatment": {
+    "regime": "Impôt à la source (Quellensteuer) — permis B, < 120k seuil ZG dépassé",
+    "above_threshold": true,
+    "ordinary_assessment_required": "TOU (Taxation Ordinaire Ultérieure) obligatoire — revenu brut > 120'000 CHF",
+    "deadline": "31 mars de l'année N+1",
+    "deductions_recoverable": [
+      "Frais de déplacement effectifs",
+      "Pilier 3a (jusqu'à CHF 7'056)",
+      "Rachats LPP",
+      "Primes assurance-maladie effectives"
+    ]
+  },
+  "checks": [
+    "Confirmer demande TOU déposée dans les délais",
+    "Vérifier barème A0 (célibataire sans enfants)",
+    "Calculer économie potentielle TOU vs source"
+  ]
+}

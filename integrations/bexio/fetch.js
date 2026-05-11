@@ -6,6 +6,9 @@
  * Required env vars:
  *   BEXIO_API_TOKEN  (Account → API tokens)
  *
+ * See integrations/.env.template for the full list of integration env vars.
+ * Missing vars throw at first API call with a message pointing back here.
+ *
  * Usage:
  *   node integrations/bexio/fetch.js                       # all data, current year
  *   node integrations/bexio/fetch.js --resource invoices

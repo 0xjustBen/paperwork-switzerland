@@ -5,12 +5,19 @@
   "private": true,
   "scripts": {
     "calc": "node scripts/calc.js",
+    "test": "node --test scripts/tests/",
     "test:calc": "node scripts/test-deterministic-calculations.js",
+    "lint": "eslint scripts/ integrations/ || true",
     "qrbill": "node scripts/generate-qr-bill.js",
     "fetch": "node integrations/bexio/fetch.js; node integrations/stripe/fetch.js",
     "fetch:bexio": "node integrations/bexio/fetch.js",
     "fetch:stripe": "node integrations/stripe/fetch.js",
-    "parse:camt": "node integrations/postfinance/parse.js"
+    "parse:camt": "node integrations/postfinance/parse.js",
+    "validate-iban": "node scripts/validate-iban.js",
+    "validate-uid": "node scripts/validate-uid.js",
+    "validate-qr": "node scripts/validate-qr-reference.js",
+    "check-i18n": "node scripts/check-i18n-parity.js",
+    "check-skills": "node scripts/check-skill-metadata.js"
   },
   "engines": {
     "node": ">=18"
@@ -18,5 +25,9 @@
   "dependencies": {
     "swissqrbill": "^4.2.0",
     "stripe": "^17.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
   }
 }

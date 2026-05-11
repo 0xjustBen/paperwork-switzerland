@@ -1,0 +1,52 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "taxpayer": {
+    "first_name": "Pierre",
+    "last_name": "Délémont",
+    "birth_date": "1959-03-08",
+    "ahv_number": "756.1122.3344.55",
+    "canton": "TI",
+    "commune": "Lugano",
+    "address": "Via Nassa 28, 6900 Lugano",
+    "civil_status": "married",
+    "retirement_date": "2024-04-01"
+  },
+  "spouse": {
+    "first_name": "Maria",
+    "last_name": "Délémont",
+    "birth_date": "1961-07-15",
+    "still_working": false
+  },
+  "pillar_3a_withdrawal_chf": {
+    "year": 2024,
+    "providers": [
+      { "name": "PostFinance 3a", "capital_chf": 62500, "withdrawal_date": "2024-03-15" },
+      { "name": "VIAC 3a", "capital_chf": 48200, "withdrawal_date": "2024-03-20" }
+    ],
+    "total_withdrawn": 110700,
+    "lump_sum_taxation": true
+  },
+  "pillar_2_withdrawal_chf": {
+    "lpp_capital": 385000,
+    "lpp_pension": 0,
+    "choice": "capital_total",
+    "withdrawal_date": "2024-04-01"
+  },
+  "ahv_pension_chf": {
+    "monthly": 2360,
+    "annual": 28320,
+    "first_payment": "2024-05-01"
+  },
+  "wealth_chf": {
+    "bank_accounts": 78000,
+    "securities_portfolio": 165000,
+    "real_estate_value": 720000,
+    "mortgage": 280000
+  },
+  "expected_treatment": {
+    "lump_sum_3a_separate_rate": "Imposition séparée à taux réduit (env. 1/5 du barème) — fédéral + cantonal TI",
+    "lump_sum_lpp_separate_rate": "Idem 2e pilier — imposition séparée",
+    "annual_pension_taxation": "Rentes AVS + LPP imposées au revenu ordinaire à 100%",
+    "ti_specifics": "TI applique tarif progressif réduit sur prestations en capital"
+  }
+}

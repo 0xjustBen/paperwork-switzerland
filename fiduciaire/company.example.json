@@ -1,0 +1,62 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "$schema_note": "Copy to fiduciaire/company.json. The fiduciaire skill needs accounting policies, FX, VAT method, audit regime.",
+  "legal_name": "Helvetia Cloud SA",
+  "uid": "CHE-123.456.789",
+  "ide_vat": "CHE-123.456.789 TVA",
+  "legal_form": "SA",
+  "canton": "ZH",
+  "commune": "Zürich",
+  "address": {
+    "street": "Bahnhofstrasse 42",
+    "zip": "8001",
+    "city": "Zürich",
+    "country": "CH"
+  },
+  "accounting_policy": {
+    "framework": "CO_881_ss",
+    "_framework_alternatives": ["CO_881_ss", "Swiss_GAAP_RPC", "IFRS"],
+    "functional_currency": "CHF",
+    "presentation_currency": "CHF",
+    "fx_regime": "monthly_ECB_rates",
+    "_fx_alternatives": ["spot_each_transaction", "monthly_ECB_rates", "monthly_AFC_rates"],
+    "fx_rates_source": "ESTV / AFC monthly average",
+    "depreciation_method": "linear",
+    "stock_valuation": "lower_of_cost_or_market"
+  },
+  "vat": {
+    "subject": true,
+    "method": "effective",
+    "_method_alternatives": ["effective", "ntdr", "flat_rate"],
+    "frequency": "quarterly",
+    "rates_used": [8.1, 2.6, 3.8],
+    "deduction_pct": 100,
+    "next_filing_due": "2025-08-31"
+  },
+  "audit": {
+    "regime": "opting_out",
+    "_regime_alternatives": ["ordinary", "limited", "opting_out"],
+    "opting_out_conditions_met": true,
+    "fte_below_10": true,
+    "shareholder_unanimous_consent": true,
+    "auditor_uid": null,
+    "auditor_name": null
+  },
+  "fiscal_year": { "start": "01-01", "end": "12-31" },
+  "social": {
+    "ahv_caisse": "AK Banken",
+    "ahv_account": "70-1234.5",
+    "lpp_provider": "Swiss Life",
+    "uvg_provider": "SUVA",
+    "fak_caisse": "FAK ZH"
+  },
+  "bank_accounts": [
+    { "iban": "CH9300762011623852957", "currency": "CHF", "bank": "ZKB", "primary": true },
+    { "iban": "CH4431999123000889012", "currency": "EUR", "bank": "ZKB", "primary": false }
+  ],
+  "fiduciaire_mandate": {
+    "scope": ["bookkeeping", "vat_filings", "annual_accounts", "tax_returns", "payroll"],
+    "frequency": "monthly_closing",
+    "client_portal": "bexio"
+  }
+}

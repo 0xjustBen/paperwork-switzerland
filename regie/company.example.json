@@ -1,0 +1,51 @@
+{
+  "_disclaimer": "Sample data — illustrative only",
+  "$schema_note": "Copy to regie/company.json. The regie skill needs PPE/bail context, regie identity, mandated buildings.",
+  "regie": {
+    "legal_name": "Régie Lémanique SA",
+    "uid": "CHE-456.789.012",
+    "ide_vat": "CHE-456.789.012 TVA",
+    "canton": "VD",
+    "address": {
+      "street": "Avenue de Rumine 20",
+      "zip": "1005",
+      "city": "Lausanne",
+      "country": "CH"
+    },
+    "uspi_member": true,
+    "languages": ["fr"]
+  },
+  "mandate_type": "ppe_et_bail",
+  "_mandate_alternatives": ["bail_only", "ppe_only", "ppe_et_bail", "regie_complete"],
+  "ppe_portfolio": [
+    {
+      "name": "PPE Les Oliviers",
+      "address": "Chemin des Oliviers 8, 1009 Pully",
+      "lots_count": 12,
+      "quotes_total": 1000,
+      "rf_number": "VD-PPE-PUL-2014-0098",
+      "fonds_renovation_chf": 142500
+    },
+    {
+      "name": "PPE Montbenon Résidence",
+      "address": "Avenue Marc-Dufour 18, 1007 Lausanne",
+      "lots_count": 8,
+      "quotes_total": 1000,
+      "rf_number": "VD-PPE-LAU-2017-0142",
+      "fonds_renovation_chf": 98300
+    }
+  ],
+  "bail_portfolio": {
+    "total_objects": 84,
+    "habitation_count": 71,
+    "commercial_count": 13,
+    "indexed_to": "IPC_national",
+    "reference_rate_pct": 1.75
+  },
+  "honoraires_chf": {
+    "ppe_par_lot_an": 600,
+    "bail_pct_loyer_brut": 5.0,
+    "etat_des_lieux_chf": 280
+  },
+  "languages_correspondance": ["fr"]
+}
