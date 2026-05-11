@@ -64,6 +64,24 @@ function parseFrontMatter(text) {
       if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
         v = v.slice(1, -1);
       }
+      // inline flow-style mapping: { a: 1, b: 2 }
+      if (v.startsWith('{') && v.endsWith('}')) {
+        const inner = v.slice(1, -1);
+        const flow = {};
+        for (const pair of inner.split(',')) {
+          const idx = pair.indexOf(':');
+          if (idx === -1) continue;
+          const k = pair.slice(0, idx).trim();
+          let pv = pair.slice(idx + 1).trim();
+          if ((pv.startsWith('"') && pv.endsWith('"')) || (pv.startsWith("'") && pv.endsWith("'"))) {
+            pv = pv.slice(1, -1);
+          }
+          flow[k] = pv;
+        }
+        obj[key] = flow;
+        currentKey = key;
+        continue;
+      }
       obj[key] = v;
       currentKey = key;
       continue;
